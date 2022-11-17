@@ -19,4 +19,7 @@ while True:
                 stack.append(op1/op2)
             print(stack[-1])
     else:
-        stack.append(float(st))
+        try:
+            stack.append(float(st))
+        except:
+            print('Неверный тип данных. Введите другое число')
