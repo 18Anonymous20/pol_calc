@@ -4,16 +4,19 @@ while True:
     if st == 'q':
         break
     if st in ['+', '-', '*', '/']:
-        op1 = stack.pop()
-        op2 = stack.pop()
-        if st == '+':
-            stack.append(op1 + op2)
-        if st == '-':
-            stack.append(op1 - op2)
-        if st == '*':
-            stack.append(op1*op2)
-        if st == '/':
-            stack.append(op1/op2)
-        print(stack[-1])
+        if len(stack) < 2:
+            print('Стек исчерпан, введите число')
+        else:
+            op1 = stack.pop()
+            op2 = stack.pop()
+            if st == '+':
+                stack.append(op1 + op2)
+            if st == '-':
+                stack.append(op1 - op2)
+            if st == '*':
+                stack.append(op1*op2)
+            if st == '/':
+                stack.append(op1/op2)
+            print(stack[-1])
     else:
-            stack.append(float(st))
+        stack.append(float(st))
